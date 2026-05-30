@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Adventure - NES Style Platformer</title>
+    <!-- Import Retro Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="arcade-cabinet">
+        <div class="cabinet-header">
+            <h1>RETRO ADVENTURE</h1>
+            <div class="sub-header">8-BIT SIDE-SCROLLER</div>
+        </div>
+
+        <div class="screen-container">
+            <!-- CRT Screen FX Overlay -->
+            <div class="crt-overlay"></div>
+            
+            <!-- Game Canvas -->
+            <canvas id="gameCanvas" width="480" height="270"></canvas>
+
+            <!-- Screens & Overlays -->
+            <div id="startScreen" class="overlay-screen active">
+                <div class="title-logo">MARIO RETRO</div>
+                <div class="start-prompt blink">PRESS ENTER TO START</div>
+                <div class="controls-guide">
+                    <h3>CONTROLS</h3>
+                    <p>◀ ▶ / A D : MOVE</p>
+                    <p>SPACE / K : JUMP (HOLD FOR HIGHER JUMP)</p>
+                    <p>SHIFT / J : RUN / SHOOT FIREBALL</p>
+                    <p>M : MUTE MUSIC | T : TOGGLE AUTOPLAY</p>
+                </div>
+            </div>
+
+            <div id="gameOverScreen" class="overlay-screen">
+                <div class="game-over-text">GAME OVER</div>
+                <div class="restart-prompt">PRESS ENTER TO TRY AGAIN</div>
+            </div>
+
+            <div id="victoryScreen" class="overlay-screen">
+                <div class="victory-text">STAGE CLEAR</div>
+                <div class="restart-prompt">PRESS ENTER TO PLAY AGAIN</div>
+            </div>
+            
+            <div id="pauseScreen" class="overlay-screen">
+                <div class="pause-text">PAUSED</div>
+            </div>
+        </div>
+
+        <!-- Cabinet Controls Panel (Decorative + Status) -->
+        <div class="controls-panel">
+            <div class="audio-control-btn" id="audioToggle">
+                🔊 MUSIC: ON
+            </div>
+            <div class="audio-control-btn" id="demoToggle">
+                🤖 AUTOPLAY: OFF
+            </div>
+            <div class="arcade-brand">ANTIGRAVITY SYSTEM</div>
+        </div>
+    </div>
+
+    <!-- Load Game Scripts -->
+    <script src="sound.js"></script>
+    <script src="physics.js"></script>
+    <script src="entities.js"></script>
+    <script src="tilemap.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
